@@ -42,7 +42,7 @@ function Login() {
           <Paper elevation={10} style={paperStyle}>
             <Grid align='center' >
               <Avatar style={avatarStyle} sx={{ mb: 2.25 }}><LockIcon /></Avatar>
-              <Typography variant='h2' sx={{ mb: 2.25 }}>Login</Typography>
+              <Typography variant='h2' sx={{ mb: 2.25 }}>כניסה</Typography>
             </Grid>
             <form onSubmit={onSubmit}>
               <Grid sx={{ mb: 2.25 }}>
@@ -52,7 +52,7 @@ function Login() {
                   id='email'
                   name='email'
                   value={email}
-                  placeholder='Enter your email'
+                  placeholder='מייל'
                   onChange={onChange}
                 />
                 <TextField
@@ -62,11 +62,11 @@ function Login() {
                   id='password'
                   name='password'
                   value={password}
-                  placeholder='Enter password'
+                  placeholder='סיסמה'
                   onChange={onChange}
                 />
               </Grid>
-              <Button type='submit' color='primary' variant="contained" style={btnstyle} >Submit</Button>
+              <Button type='submit' color='primary' variant="contained" style={btnstyle} >אישור</Button>
             </form>
           </Paper>
         </Grid>

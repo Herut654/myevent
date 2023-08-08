@@ -13,18 +13,18 @@ import beautySalon from '../assets/images/beautySalon.jpg'
 const Wedding = () => {
     const classes = useStyles();
     const data = [
-        { id: "1", name: "event hall", image: eventHall, description: "Call us to find the best wedding hall for your event" },
-        { id: "2", name: "catering", image: catering, description: "Call us to find the best catering for your event"  },
+        { id: "1", name: "event hall", image: eventHall, description: "התקשרו אלינו כדי למצוא את אולם האירועים המתאים ביותר לאירוע שלכם" },
+        { id: "2", name: "catering", image: catering, description: "התקשרו אלינו כדי למצוא את הקייטרינג הטוב ביותר לאירוע שלכם"  },
         { id: "3", name: "attraction and DJ", image: attractionAndDJ, description: "Call us to find the best attraction and DJ for your event"  },
-        { id: "4", name: "wedding clouth", image: weddingClouth, description: "Call us to find the best wedding clouth for your event"  },
-        { id: "5", name: "photographer", image: photographer, description: "Call us to find the best photographer for your event"  },
-        { id: "6", name: "beauty salon", image: beautySalon, description: "Call us to find the best beauty salon for your event"  },
+        { id: "4", name: "wedding clouth", image: weddingClouth, description: "התקשרו אלינו כדי למצוא את האאוטפיט הטוב ביותר לאירוע שלכם"  },
+        { id: "5", name: "photographer", image: photographer, description: "התקשרו אלינו כדי למצוא את הצלם הטוב ביותר לאירוע שלכם"  },
+        { id: "6", name: "beauty salon", image: beautySalon, description: "התקשרו אלינו כדי למצוא את סלון היופי הטוב ביותר לאירוע שלכם"  },
     ]
     return (
         <Container className={classes.container}>
             <Grid container className={classes.gridContainer}>
                 <Grid item >
-                <Typography variant="h5">According to the information we received, you are celebrating a "wedding" type of event. Below is a list of suppliers by category for your event:</Typography>
+                <Typography variant="h5">לפי המידע שקיבלנו, אתם חוגגים אירוע מסוג "חתונה". להלן רשימה של ספקים לפי קטגוריות לאירוע שלך:</Typography>
                 </Grid>
             </Grid>
             <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} className={classes.gridContainer}>

@@ -12,18 +12,18 @@ import photographer from '../assets/images/photographer.jpg'
 const BarMitzva = () => {
     const classes = useStyles();
     const data = [
-        {id: "1", name: "event hall", image: eventHall, description: "Call us to find the best event hall for your event" },
-        {id: "2", name: "catering", image: catering, description: "Call us to find the best catering for your event" },
-        {id: "3", name: "attraction and DJ", image: attractionAndDJ, description: "Call us to find the best attraction and DJ for your event" },
-        {id: "4", name: "event clouth", image: eventClouth, description: "Call us to find the best event clouth for your event" },
-        {id: "5", name: "photographer", image: photographer, description: "Call us to find the best photographer for your event" },
+        {id: "1", name: "event hall", image: eventHall, description: "התקשרו אלינו כדי למצוא את אולם האירועים המתאים ביותר לאירוע שלכם" },
+        {id: "2", name: "catering", image: catering, description: "התקשרו אלינו כדי למצוא את הקייטרינג הטוב ביותר לאירוע שלכם" },
+        {id: "3", name: "attraction and DJ", image: attractionAndDJ, description: "התקשרו אלינו כדי למצוא את האטרקציות ודי ג'יי הטובים ביותר לאירוע שלכם" },
+        {id: "4", name: "event clouth", image: eventClouth, description: "התקשרו אלינו כדי למצוא את האאוטפיט הטוב ביותר לאירוע שלכם" },
+        {id: "5", name: "photographer", image: photographer, description: "התקשרו אלינו כדי למצוא את הצלם הטוב ביותר לאירוע שלכם" },
         
     ]
     return (
         <Container className={classes.container}>
             <Grid container className={classes.gridContainer}>
                 <Grid item >
-                <Typography variant="h5">According to the information we received, you are celebrating a "Bar Mitzvah" type of event. Below is a list of suppliers by category for your event:</Typography>
+                <Typography variant="h5">לפי המידע שקיבלנו, אתם חוגגים אירוע מסוג "בר מצווה". להלן רשימה של ספקים לפי קטגוריות לאירוע שלך:</Typography>
                 </Grid>
             </Grid>
             <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} className={classes.gridContainer}>

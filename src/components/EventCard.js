@@ -22,7 +22,7 @@ const EventCard = ({ data }) => {
                 </Typography>
               </CardContent>
               {eventData.link ? <CardActions>
-                <Button size="small" href={eventData.link}>More Info</Button>
+                <Button size="small" href={eventData.link}>פרטים נוספים</Button>
               </CardActions> : <></>}
             </Card>
           </Grid>

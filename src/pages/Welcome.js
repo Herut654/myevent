@@ -22,8 +22,8 @@ const Welcome = () => {
       <Grid container className={classes.welcomeContainer}>
         <Grid item  >
           <Typography variant="body2" gutterBottom>
-            Welcome messages have something in common with paper clips—their names are pretty much self-explanatory, aren’t they.
-          </Typography>
+            בראש ובראשונה צוות eventRacking מאחלים לכם המון מזל טוב ומקווים שהאתר יקל עליכן בארגון האירוע שלכם. האתר יוכל לספק לכם רשימה של ספקים מומלצים ,בין אם זה מקום לאיורע ,קייטרינג, אטרקציות, צלמים, תלבושות וכו..
+            </Typography>
           <Typography variant="body2" gutterBottom>
             While most people know that a paper clip… clips paper, few realize you can use it to pick a lock, fix a zipper, or hack a phone stand to name but a few.
           </Typography>

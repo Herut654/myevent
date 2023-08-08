@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
+import { register, reset } from '../features/auth/authSlice'
+import Spinner from '../components/Spinner'
 import { Container, Grid, Paper, Avatar, TextField, Button, Typography } from '@mui/material';
 import LockIcon from '@mui/icons-material/Lock';
 import useStyles from "./style";
@@ -20,6 +24,24 @@ function Register() {
 
   const { name,phoneNumber, email, password, password2 } = formData
 
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+
+  const { user, isLoading, isError, isSuccess, message } = useSelector(
+    (state) => state.auth
+  )
+
+  useEffect(() => {
+    if (isError) {
+      toast.error(message)
+    }
+
+    if (isSuccess || user) {
+      navigate('/')
+    }
+
+    dispatch(reset())
+  }, [user, isError, isSuccess, message, navigate, dispatch])
 
 
   const onChange = (e) => {
@@ -42,8 +64,12 @@ function Register() {
         password,
       }
 
-      console.log("userData", userData)
+      dispatch(register(userData))
     }
+  }
+
+  if (isLoading) {
+    return <Spinner />
   }
 
   return (
@@ -53,7 +79,7 @@ function Register() {
           <Paper elevation={10} style={paperStyle}>
             <Grid align='center' >
               <Avatar style={avatarStyle} sx={{ mb: 2.25 }}><LockIcon /></Avatar>
-              <Typography variant='h2' sx={{ mb: 2.25 }}>Register</Typography>
+              <Typography variant='h2' sx={{ mb: 2.25 }}>הרשמה</Typography>
             </Grid>
             <form onSubmit={onSubmit}>
               <Grid sx={{ mb: 2.25 }}>
@@ -63,7 +89,7 @@ function Register() {
                   id='name'
                   name='name'
                   value={name}
-                  placeholder='Enter your name'
+                  placeholder='שם מלא'
                   onChange={onChange}
                 />
                 <TextField
@@ -72,7 +98,7 @@ function Register() {
                   id='phoneNumber'
                   name='phoneNumber'
                   value={phoneNumber}
-                  placeholder='Enter your phone number'
+                  placeholder='מספר טלפון'
                   onChange={onChange}
                 />
                 <TextField
@@ -82,7 +108,7 @@ function Register() {
                   id='email'
                   name='email'
                   value={email}
-                  placeholder='Enter your email'
+                  placeholder= 'מייל'
                   onChange={onChange}
                 />
                 <TextField
@@ -91,7 +117,7 @@ function Register() {
                   id='password'
                   name='password'
                   value={password}
-                  placeholder='Enter password'
+                  placeholder='סיסמה'
                   onChange={onChange}
                 />
                 <TextField
@@ -100,11 +126,11 @@ function Register() {
                   id='password2'
                   name='password2'
                   value={password2}
-                  placeholder='Confirm password'
+                  placeholder='אמת סיסמה'
                   onChange={onChange}
                 />
               </Grid>
-              <Button type='submit' color='primary' variant="contained" style={btnstyle} >Submit</Button>
+              <Button type='submit' color='primary' variant="contained" style={btnstyle} >אישור</Button>
             </form>
           </Paper>
         </Grid>

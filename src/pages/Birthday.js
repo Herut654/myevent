@@ -11,11 +11,11 @@ import activeBar from '../assets/images/activeBar.jpg'
 const Birthday = () => {
     const classes = useStyles();
     const data = [
-            {id: "1", name: "event hall", image: eventHall, description: "Call us to find the best wedding hall for your event" },
-            {id: "2", name: "catering", image: catering, description: "Call us to find the best catering for your event" },
-            {id: "3", name: "attraction and DJ", image: attractionAndDJ, description: "Call us to find the best attraction and DJ for your event" },
-            {id: "4", name: "place design", image: placeDesign, description: "Call us to find the best place designer for your event" },
-            {id: "5", name: "active bar", image: activeBar, description: "Call us to find the best active bar for your event" },
+            {id: "1", name: "event hall", image: eventHall, description: "התקשרו אלינו כדי למצוא את אולם האירועים הטוב ביותר לאירוע שלכם" },
+            {id: "2", name: "catering", image: catering, description: "התקשרו אלינו כדי למצוא את הקייטרינג הטוב ביותר לאירוע שלכם" },
+            {id: "3", name: "attraction and DJ", image: attractionAndDJ, description: "התקשרו אלינו כדי למצוא את האטרקציות והדי ג'יי הטובים ביותר לאירוע שלכם" },
+            {id: "4", name: "place design", image: placeDesign, description: "התקשרו אלינו כדי למצוא את מעצב המקום הטוב ביותר לאירוע שלכם" },
+            {id: "5", name: "active bar", image: activeBar, description: "התקשרו אלינו כדי למצוא את הבר האקטיבי הטוב ביותר לאירוע שלכם" },
             
         
     ]
@@ -23,7 +23,7 @@ const Birthday = () => {
         <Container className={classes.container}>
             <Grid container className={classes.gridContainer}>
                 <Grid item >
-                <Typography variant="h5">According to the information we received, you are celebrating a "Birthday" type of event. Below is a list of suppliers by category for your event:</Typography>
+                <Typography variant="h5">לפי המידע שקיבלנו, אתם חוגגים אירוע מסוג "יום הולדת". להלן רשימה של ספקים לפי קטגוריות לאירוע שלך:</Typography>
                 </Grid>
             </Grid>
             <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} className={classes.gridContainer}>
