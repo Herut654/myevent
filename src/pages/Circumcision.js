@@ -14,12 +14,11 @@ import photographer from '../assets/images/photographer.jpg'
 const Circumcision = () => {
     const classes = useStyles();
     const data = [
-        {id: "1", name: "event hall", image: eventHall, description: "התקשרו אלינו כדי למצוא את אולם האירועים המתאים ביותר לאירוע שלכם" },
-        {id: "2", name: "catering", image: catering, description: "התקשרו אלינו כדי למצוא את הקייטרינג הטוב ביותר לאירוע שלכם" },
-        {id: "3", name: "Circumcision juice", image: CircumcisionJuice, description: "התקשרו אלינו כדי למצוא את המוהל הטוב ביותר לאירוע שלכם" },
-        {id: "4", name: "place design", image: placeDesignC, description: "התקשרו אלינו כדי למצוא את מעצב המקום הטוב ביותר לאירוע שלכם" },
-        {id: "5", name: "photographer", image: photographer, description: "התקשרו אלינו כדי למצוא את הצלם הטוב ביותר לאירוע שלכם" },
-        // {id: "6", name: "hand in hand" },
+        {id: "1", name: "אולם אירועים", image: eventHall, description: "התקשרו אלינו כדי למצוא את אולם האירועים המתאים ביותר לאירוע שלכם" },
+        {id: "2", name: "קייטרינג", image: catering, description: "התקשרו אלינו כדי למצוא את הקייטרינג הטוב ביותר לאירוע שלכם" },
+        {id: "3", name: "מוהל ", image: CircumcisionJuice, description: "התקשרו אלינו כדי למצוא את המוהל הטוב ביותר לאירוע שלכם" },
+        {id: "4", name: "עיצוב מקום", image: placeDesignC, description: "התקשרו אלינו כדי למצוא את מעצב המקום הטוב ביותר לאירוע שלכם" },
+        {id: "5", name: "צלם", image: photographer, description: "התקשרו אלינו כדי למצוא את הצלם הטוב ביותר לאירוע שלכם" },
         
 
     ]

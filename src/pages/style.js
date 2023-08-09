@@ -14,7 +14,19 @@ const useStyles = makeStyles(() => ({
     alignContent:" space-around",
     paddingTop: 10,
     paddingBottom: 10,
-  }
+  },
+  root: {
+    // maxWidth: 400,
+    // flexGrow: 1,
+  },
+  header: {
+    display: 'flex',
+    alignItems: 'center',
+    height: 50,
+  },
+  img: {
+    width: '100%',
+  },
 }));
 
 export default useStyles

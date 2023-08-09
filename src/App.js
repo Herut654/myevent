@@ -11,6 +11,7 @@ import Birthday from './pages/Birthday'
 import Circumcision from './pages/Circumcision'
 import ErrorPage from './pages/ErrorPage';
 import Profile from './pages/Profile'
+import Suggestion from './pages/Suggestion';
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
               <Route path='/login' element={<Login />} />
               <Route path='/register' element={<Register />} />
               <Route path='/profile' element={<Profile />} />
+              <Route path='/suggestion' element={<Suggestion />} />
               <Route path="*" element={<ErrorPage />} />
             </Routes>
           </div>

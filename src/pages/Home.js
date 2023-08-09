@@ -8,11 +8,11 @@ const Home = () => {
   return (
     <>
 
-      <Typography variant="h1" sx={{ margin: 0 }}>
-        ברוכים הבאים ליצירת האירוע הבא שלכם...
+      <Typography variant="h3" sx={{ margin: 5 }}>
+        המלצות והתרשמות מהאתר שלנו :
       </Typography>
 
-      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} >
+      <Grid container rowSpacing={3} columnSpacing={{ xs: 1, sm: 2, md: 3 }} >
         <Grid item xs={9}>
           <Card sx={{ display: 'flex', direction: 'rtl' }}>
             <CardMedia
@@ -22,9 +22,8 @@ const Home = () => {
               alt="Live from space album cover"
             />
             <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-              <Typography variant="subtitle2" sx={{ margin: 0 }}>
-                subtitle2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
-                blanditiis tenetur
+              <Typography variant="subtitle2" sx={{ margin: 3 }}>
+              התרשמתי מאוד מהאתר לטובה. קיבלתי סיוע מדהים בארגון האירוע ללא מאמץ יתר.אין ספק שעוד אחזור לארגן פה את האירועים הבאים.
               </Typography>
             </Box>
           </Card>
@@ -38,9 +37,8 @@ const Home = () => {
               alt="Live from space album cover"
             />
             <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-              <Typography variant="subtitle2" sx={{ margin: 0 }}>
-                subtitle2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
-                blanditiis tenetur
+              <Typography variant="subtitle2" sx={{ margin: 3 }}>
+                האתר עוזר המון בארגון אירוע במינימום מאמץ. לי אישית האתר מאוד סייע.
               </Typography>
             </Box>
           </Card>
@@ -54,9 +52,8 @@ const Home = () => {
               alt="Live from space album cover"
             />
             <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-              <Typography variant="subtitle2" sx={{ margin: 0 }}>
-                subtitle2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
-                blanditiis tenetur
+              <Typography variant="subtitle2" sx={{ margin: 3 }}>
+                מאוד מרוצה מהשירות שנותן האתר. ניתן לפנות למגוון ספקים מאוד מקצועיים ומומלצים.
               </Typography>
             </Box>
           </Card>
@@ -70,9 +67,8 @@ const Home = () => {
               alt="Live from space album cover"
             />
             <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-              <Typography variant="subtitle2" sx={{ margin: 0 }}>
-                subtitle2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
-                blanditiis tenetur
+              <Typography variant="subtitle2" sx={{ margin: 3 }}>
+                אתר מצוין. עזר לי המון בארגון האירוע.
               </Typography>
             </Box>
           </Card>
