@@ -7,8 +7,9 @@ import catering from '../assets/images/catering.jpg'
 import attractionAndDJ from '../assets/images/attractionAndDJ.jpg'
 import placeDesign from '../assets/images/placeDesign.jpg'
 import activeBar from '../assets/images/activeBar.jpg'
+import PopUp from '../components/PopUp';
 
-const Birthday = () => {
+const Birthday = ({open, handleClose}) => {
     const classes = useStyles();
     const data = [
             {id: "1", name: "אולם אירועים", image: eventHall, description: "התקשרו אלינו כדי למצוא את אולם האירועים הטוב ביותר לאירוע שלכם" },
@@ -29,6 +30,7 @@ const Birthday = () => {
             <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} className={classes.gridContainer}>
                 <EventCard data={data} />
             </Grid>
+            <PopUp open={open} handleClose={handleClose} eventName="יום הולדת"/>
         </Container>
 
     )

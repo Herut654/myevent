@@ -5,12 +5,13 @@ import { AppBar, Box, Toolbar, Typography, Button } from '@mui/material';
 import { logout, reset } from '../features/auth/authSlice'
 import Logo from '../assets/images/logo.jpg'
 
-function Header() {
+function Header({handleOpen}) {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const { user } = useSelector((state) => state.auth)
   const register = window.location.toString().includes("register")
   const login = window.location.toString().includes("login")
+  const createEvent = window.location.toString().includes("circumcision") || window.location.toString().includes("birthday") || window.location.toString().includes("wedding") || window.location.toString().includes("barMitzva")
 
   const onLogout = () => {
     dispatch(logout())
@@ -22,7 +23,11 @@ function Header() {
     <Box sx={{ flexGrow: 1, direction: 'rtl' }}>
       <AppBar position="static">
         <Toolbar sx={{ justifyContent: "space-between" }}>
+          <div>
           <img src={Logo} width={80} height={50} />
+          {createEvent ? <Button color='inherit' size="small" onClick={handleOpen} >צור אירוע</Button> : <></>}
+          
+          </div>
           {!user ? (
             <>
               <Button color="inherit" onClick={onLogout}>להתנתקות<CgLogOut /></Button>

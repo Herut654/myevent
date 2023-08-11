@@ -7,9 +7,10 @@ import catering from '../assets/images/catering.jpg'
 import attractionAndDJ from '../assets/images/attractionAndDJ.jpg'
 import eventClouth from '../assets/images/eventClouth.jpg'
 import photographer from '../assets/images/photographer.jpg'
+import PopUp from '../components/PopUp';
 
 
-const BarMitzva = () => {
+const BarMitzva = ({open, handleClose}) => {
     const classes = useStyles();
     const data = [
         {id: "1", name: "אולם אירועים", image: eventHall, description: "התקשרו אלינו כדי למצוא את אולם האירועים המתאים ביותר לאירוע שלכם" },
@@ -29,6 +30,7 @@ const BarMitzva = () => {
             <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} className={classes.gridContainer}>
                 <EventCard data={data} />
             </Grid>
+            <PopUp open={open} handleClose={handleClose} eventName="בר מצווה"/>
         </Container>
     )
 }

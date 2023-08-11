@@ -8,9 +8,10 @@ import attractionAndDJ from '../assets/images/attractionAndDJ.jpg'
 import weddingClouth from '../assets/images/weddingClouth.jpg'
 import photographer from '../assets/images/photographer.jpg'
 import beautySalon from '../assets/images/beautySalon.jpg'
+import PopUp from '../components/PopUp';
 
 
-const Wedding = () => {
+const Wedding = ({open, handleClose}) => {
     const classes = useStyles();
     const data = [
         { id: "1", name: "אולם אירועים", link: "suggestion", image: eventHall, description: "התקשרו אלינו כדי למצוא את אולם האירועים המתאים ביותר לאירוע שלכם" },
@@ -30,6 +31,7 @@ const Wedding = () => {
             <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} className={classes.gridContainer}>
                 <EventCard data={data} />
             </Grid>
+            <PopUp open={open} handleClose={handleClose} eventName="חתונה"/>
         </Container>
     )
 }

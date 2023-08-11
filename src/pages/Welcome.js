@@ -6,6 +6,7 @@ import Wedding from '../assets/images/Wedding.jpg'
 import BarMitzva from '../assets/images/BarMitzva.jpg'
 import Birthday from '../assets/images/Birthday.jpg'
 import Circumcision from '../assets/images/Circumcision.jpg'
+import PopUp from '../components/PopUp';
 
 
 const Welcome = () => {
@@ -30,6 +31,7 @@ const Welcome = () => {
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} className={classes.gridContainer}>
         <EventCard data={data} />
       </Grid>
+      
     </Container>
   )
 }

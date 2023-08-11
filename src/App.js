@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './pages/Home'
@@ -14,18 +14,21 @@ import Profile from './pages/Profile'
 import Suggestion from './pages/Suggestion';
 
 const App = () => {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   return (
     <div>
        <Router>
           <div className='container'>
-            <Header />
+            <Header handleOpen={handleOpen}/>
             <Routes>
-              <Route path='/welcome' element={<Welcome />} />
+              <Route path='/welcome' element={<Welcome/>} />
               <Route path='/home' element={<Home />} />
-              <Route path='/barMitzva' element={<BarMitzva />} />
-              <Route path='/wedding' element={<Wedding />} />
-              <Route path='/birthday' element={<Birthday />} />
-              <Route path='/circumcision' element={<Circumcision />} />
+              <Route path='/barMitzva' element={<BarMitzva open={open} handleClose={handleClose}/>} />
+              <Route path='/wedding' element={<Wedding open={open} handleClose={handleClose}/>} />
+              <Route path='/birthday' element={<Birthday open={open} handleClose={handleClose}/>} />
+              <Route path='/circumcision' element={<Circumcision open={open} handleClose={handleClose}/>} />
               <Route path='/login' element={<Login />} />
               <Route path='/register' element={<Register />} />
               <Route path='/profile' element={<Profile />} />
