@@ -25,6 +25,7 @@ const App = () => {
             <Routes>
               <Route path='/welcome' element={<Welcome/>} />
               <Route path='/home' element={<Home />} />
+              <Route path='/' element={<Home />} />
               <Route path='/barMitzva' element={<BarMitzva open={open} handleClose={handleClose}/>} />
               <Route path='/wedding' element={<Wedding open={open} handleClose={handleClose}/>} />
               <Route path='/birthday' element={<Birthday open={open} handleClose={handleClose}/>} />

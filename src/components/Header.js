@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { CgLogOut } from 'react-icons/cg'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
@@ -9,8 +10,10 @@ function Header({handleOpen}) {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const { user } = useSelector((state) => state.auth)
+  const [isLogedIn, setIsLogedIN] = useState(true)
   const register = window.location.toString().includes("register")
   const login = window.location.toString().includes("login")
+  const home = window.location.toString().includes("Home")
   const createEvent = window.location.toString().includes("circumcision") || window.location.toString().includes("birthday") || window.location.toString().includes("wedding") || window.location.toString().includes("barMitzva")
 
   const onLogout = () => {
@@ -28,7 +31,14 @@ function Header({handleOpen}) {
           {createEvent ? <Button color='inherit' size="small" onClick={handleOpen} >צור אירוע</Button> : <></>}
           
           </div>
-          {!user ? (
+          {!isLogedIn ? <div>
+            {register ? (<Button color="inherit" href='/login'>התחברות</Button>) : (<></>)}
+              {login ? (<Button color="inherit" href='/register'>הרשמה</Button>) : (<></>)}
+              {home ? (<><Button color="inherit" href='/register'>הרשמה</Button>
+              <Button color="inherit" href='/login'>התחברות</Button></>) : (<></>)}
+          </div> : <Button color="inherit" onClick={onLogout}>להתנתקות<CgLogOut /></Button>}
+          
+          {/* {!user ? (
             <>
               <Button color="inherit" onClick={onLogout}>להתנתקות<CgLogOut /></Button>
             </>
@@ -36,9 +46,18 @@ function Header({handleOpen}) {
             <>
               {register ? (<Button color="inherit" href='/login'>התחברות</Button>) : (<></>)}
               {login ? (<Button color="inherit" href='/register'>הרשמה</Button>) : (<></>)}
+              {home ?(
+                <div>
+                <Button color="inherit" href='/login'>התחברות</Button>
+                <Button color="inherit" href='/register'>הרשמה</Button>
+                </div>
+              ):(<></>)
+              
+            }
 
             </>
-          )}
+          )} */}
+          
         </Toolbar>
       </AppBar>
     </Box>
