@@ -13,11 +13,11 @@ import PopUp from '../components/PopUp';
 const BarMitzva = ({open, handleClose}) => {
     const classes = useStyles();
     const data = [
-        {id: "1", name: "אולם אירועים", image: eventHall, description: "התקשרו אלינו כדי למצוא את אולם האירועים המתאים ביותר לאירוע שלכם" },
-        {id: "2", name: "קייטרינג", image: catering, description: "התקשרו אלינו כדי למצוא את הקייטרינג הטוב ביותר לאירוע שלכם" },
-        {id: "3", name: "אטרקציות ודיג'יי", image: attractionAndDJ, description: "התקשרו אלינו כדי למצוא את האטרקציות ודי ג'יי הטובים ביותר לאירוע שלכם" },
-        {id: "4", name: "לבוש לאירוע", image: eventClouth, description: "התקשרו אלינו כדי למצוא את האאוטפיט הטוב ביותר לאירוע שלכם" },
-        {id: "5", name: "צלם", image: photographer, description: "התקשרו אלינו כדי למצוא את הצלם הטוב ביותר לאירוע שלכם" },
+        {id: "1", name: "אולם אירועים", link: "ulamType", image: eventHall, description: "התקשרו אלינו כדי למצוא את אולם האירועים המתאים ביותר לאירוע שלכם" },
+        {id: "2", name: "קייטרינג", link: "foodType", image: catering, description: "התקשרו אלינו כדי למצוא את הקייטרינג הטוב ביותר לאירוע שלכם" },
+        {id: "3", name: "אטרקציות ודיג'יי", link: "attractionType", image: attractionAndDJ, description: "התקשרו אלינו כדי למצוא את האטרקציות ודי ג'יי הטובים ביותר לאירוע שלכם" },
+        {id: "4", name: "לבוש לאירוע", link: "clouthType", image: eventClouth, description: "התקשרו אלינו כדי למצוא את האאוטפיט הטוב ביותר לאירוע שלכם" },
+        {id: "5", name: "צלם", link: "photographerType", image: photographer, description: "התקשרו אלינו כדי למצוא את הצלם הטוב ביותר לאירוע שלכם" },
         
     ]
     return (

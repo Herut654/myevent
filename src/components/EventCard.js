@@ -4,6 +4,9 @@ import {  Button, Card, CardActions, CardContent, CardMedia, Typography, Grid } 
 const EventCard = ({ data }) => {
   console.log("data",data)
 
+
+
+
   return (
     <>
       {data.map((eventData, index) => {
@@ -24,13 +27,12 @@ const EventCard = ({ data }) => {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button size="small" href={eventData.link}>פרטים נוספים</Button>
+                <Button size="small" href={eventData.link} >פרטים נוספים</Button>
               </CardActions> 
             </Card>
           </Grid>
         )
       })}
-
     </>
 
   )

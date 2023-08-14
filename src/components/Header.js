@@ -10,10 +10,10 @@ function Header({handleOpen}) {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const { user } = useSelector((state) => state.auth)
-  const [isLogedIn, setIsLogedIN] = useState(true)
+  const [isLogedIn, setIsLogedIN] = useState(false)
   const register = window.location.toString().includes("register")
   const login = window.location.toString().includes("login")
-  const home = window.location.toString().includes("Home")
+  const home = window.location.toString().includes("Home") || window.location.toString().includes("/")
   const createEvent = window.location.toString().includes("circumcision") || window.location.toString().includes("birthday") || window.location.toString().includes("wedding") || window.location.toString().includes("barMitzva")
 
   const onLogout = () => {

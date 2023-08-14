@@ -14,12 +14,12 @@ import PopUp from '../components/PopUp';
 const Wedding = ({open, handleClose}) => {
     const classes = useStyles();
     const data = [
-        { id: "1", name: "אולם אירועים", link: "suggestion", image: eventHall, description: "התקשרו אלינו כדי למצוא את אולם האירועים המתאים ביותר לאירוע שלכם" },
-        { id: "2", name: "קייטרינג", link: "suggestion", image: catering, description: "התקשרו אלינו כדי למצוא את הקייטרינג הטוב ביותר לאירוע שלכם"  },
-        { id: "3", name: "אטרקציות ודיג'יי", link: "suggestion", image: attractionAndDJ, description: "Call us to find the best attraction and DJ for your event"  },
-        { id: "4", name: "לבוש לאירוע", link: "suggestion", image: weddingClouth, description: "התקשרו אלינו כדי למצוא את האאוטפיט הטוב ביותר לאירוע שלכם"  },
-        { id: "5", name: "צלם", link: "suggestion", image: photographer, description: "התקשרו אלינו כדי למצוא את הצלם הטוב ביותר לאירוע שלכם"  },
-        { id: "6", name: "סלון יופי", link: "suggestion", image: beautySalon, description: "התקשרו אלינו כדי למצוא את סלון היופי הטוב ביותר לאירוע שלכם"  },
+        { id: "1", name: "אולם אירועים", link: "ulamType", image: eventHall, description: "התקשרו אלינו כדי למצוא את אולם האירועים המתאים ביותר לאירוע שלכם" },
+        { id: "2", name: "קייטרינג", link: "foodType", image: catering, description: "התקשרו אלינו כדי למצוא את הקייטרינג הטוב ביותר לאירוע שלכם"  },
+        { id: "3", name: "אטרקציות ודיג'יי", link: "attractionType", image: attractionAndDJ, description: "Call us to find the best attraction and DJ for your event"  },
+        { id: "4", name: "לבוש לאירוע", link: "clouthType", image: weddingClouth, description: "התקשרו אלינו כדי למצוא את האאוטפיט הטוב ביותר לאירוע שלכם"  },
+        { id: "5", name: "צלם", link: "photographerType", image: photographer, description: "התקשרו אלינו כדי למצוא את הצלם הטוב ביותר לאירוע שלכם"  },
+        { id: "6", name: "סלון יופי", link: "salonType", image: beautySalon, description: "התקשרו אלינו כדי למצוא את סלון היופי הטוב ביותר לאירוע שלכם"  },
     ]
     return (
         <Container className={classes.container}>
