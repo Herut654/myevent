@@ -1,12 +1,10 @@
 import { useState } from 'react';
 import useStyles from "../pages/style";
 import SwipeableViews from 'react-swipeable-views';
-import { autoPlay } from 'react-swipeable-views-utils';
 import { Container, Button, MobileStepper, Paper, Typography, Grid, CardActions, CardContent, Card } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { KeyboardArrowLeft, KeyboardArrowRight } from '@mui/icons-material';
 
-const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const Slider = ({ data }) => {
     const classes = useStyles();
@@ -31,7 +29,7 @@ const Slider = ({ data }) => {
             <Grid container alignItems="center" justifyContent="center">
                 <Grid item xs={12} sm={9} md={6} lg={4} >
                     <div className={classes.root}>
-                        <AutoPlaySwipeableViews
+                        <SwipeableViews
                             axis={theme.direction === 'ltr' ? 'x-reverse' : 'x'}
                             index={activeStep}
                             onChangeIndex={handleStepChange}
@@ -58,7 +56,7 @@ const Slider = ({ data }) => {
                                     </div>
                                 )
                             })}
-                        </AutoPlaySwipeableViews>
+                        </SwipeableViews>
                         <MobileStepper
                             steps={maxSteps}
                             position="static"
