@@ -1,17 +1,26 @@
-import React from 'react'
+import React, { useEffect  } from 'react'
 import { useTheme } from '@mui/material/styles';
 import { Typography, Grid, Box, Card, CardMedia } from '@mui/material';
 import Slider from '../components/Slider';
+import { getRecommends } from '../features/recommend/recommendSlice'
+import { useSelector, useDispatch  } from 'react-redux'
 
 const Home = () => {
+  const dispatch = useDispatch()
   const theme = useTheme();
+  const { recommends, isError, message } = useSelector(
+    (state) => state.recommends
+  )
 
-  const data =[
-    {id:1, name: "Moshe", eventName: " האתר עוזר המון בארגון אירוע במינימום מאמץ. לי אישית האתר מאוד סייע.", date: "24.8.1999"},
-    {id:2, name: "Moshe", eventName: " האתר עוזר המון בארגון אירוע במינימום מאמץ. לי אישית האתר מאוד סייע.", date: "24.8.1999"},
-    {id:3, name: "Moshe", eventName: " האתר עוזר המון בארגון אירוע במינימום מאמץ. לי אישית האתר מאוד סייע.", date: "24.8.1999"},
+  useEffect(() => {
 
-  ]
+    if (isError) {
+      console.log(message)
+    }
+    dispatch(getRecommends())
+
+  }, [isError, message, dispatch])
+
 
   return (
     <>
@@ -22,7 +31,7 @@ const Home = () => {
 
       <Grid container rowSpacing={3} columnSpacing={{ xs: 1, sm: 2, md: 3 }} >
         
-        <Slider data={data}/>
+        <Slider data={recommends}/>
       
       </Grid>
 

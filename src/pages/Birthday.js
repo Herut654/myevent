@@ -12,11 +12,11 @@ import PopUp from '../components/PopUp';
 const Birthday = ({open, handleClose}) => {
     const classes = useStyles();
     const data = [
-            {id: "1", name: "אולם אירועים", image: eventHall, description: "התקשרו אלינו כדי למצוא את אולם האירועים הטוב ביותר לאירוע שלכם" },
-            {id: "2", name: "קייטרינג", image: catering, description: "התקשרו אלינו כדי למצוא את הקייטרינג הטוב ביותר לאירוע שלכם" },
-            {id: "3", name: "אטרקציות ודיג'יי ", image: attractionAndDJ, description: "התקשרו אלינו כדי למצוא את האטרקציות והדי ג'יי הטובים ביותר לאירוע שלכם" },
-            {id: "4", name: "עיצוב מקום", image: placeDesign, description: "התקשרו אלינו כדי למצוא את מעצב המקום הטוב ביותר לאירוע שלכם" },
-            {id: "5", name: "בר אקטיבי", image: activeBar, description: "התקשרו אלינו כדי למצוא את הבר האקטיבי הטוב ביותר לאירוע שלכם" },
+            {id: "1", name: "אולם אירועים", link: "ulamType", image: eventHall, description: "התקשרו אלינו כדי למצוא את אולם האירועים הטוב ביותר לאירוע שלכם" },
+            {id: "2", name: "קייטרינג", link: "foodType", image: catering, description: "התקשרו אלינו כדי למצוא את הקייטרינג הטוב ביותר לאירוע שלכם" },
+            {id: "3", name: "אטרקציות ודיג'יי ", link: "attractionType", image: attractionAndDJ, description: "התקשרו אלינו כדי למצוא את האטרקציות והדי ג'יי הטובים ביותר לאירוע שלכם" },
+            {id: "4", name: "עיצוב מקום", link: "placeDesignType", image: placeDesign, description: "התקשרו אלינו כדי למצוא את מעצב המקום הטוב ביותר לאירוע שלכם" },
+            {id: "5", name: "בר אקטיבי", link: "activeBarType", image: activeBar, description: "התקשרו אלינו כדי למצוא את הבר האקטיבי הטוב ביותר לאירוע שלכם" },
             
         
     ]

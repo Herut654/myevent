@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import useStyles from "../pages/style";
 import SwipeableViews from 'react-swipeable-views';
-import { Container, Button, MobileStepper, Paper, Typography, Grid, CardActions, CardContent, Card } from '@mui/material';
+import { Container, Button, MobileStepper, Typography, Grid, CardActions, CardContent, Card, ListItemAvatar, ListItem, List, Avatar, ListItemText } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { KeyboardArrowLeft, KeyboardArrowRight } from '@mui/icons-material';
+import { foodType, photographerType, ulamType } from './Data';
+
 
 
 const Slider = ({ data }) => {
@@ -11,6 +13,9 @@ const Slider = ({ data }) => {
     const theme = useTheme();
     const [activeStep, setActiveStep] = useState(0);
     const maxSteps = data.length;
+    const home = window.location.toString().includes("Home")
+    const profile = window.location.toString().includes("Profile")
+
 
     const handleNext = () => {
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -23,7 +28,7 @@ const Slider = ({ data }) => {
     const handleStepChange = (step) => {
         setActiveStep(step);
     };
-
+console.log("data", data)
     return (
         <Container className={classes.container}>
             <Grid container alignItems="center" justifyContent="center">
@@ -37,6 +42,33 @@ const Slider = ({ data }) => {
                         >
                             {data.map((eventData, index) => {
                                 return (
+                                    <>
+                                    {home?
+                                    <List key={index} sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+                                    <ListItem  alignItems="flex-end">
+                                      <ListItemAvatar>
+                                        <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+                                      </ListItemAvatar>
+                                      <ListItemText
+                                        primary={eventData.date}
+                                        secondary={
+                                          <React.Fragment>
+                                            <Typography
+                                              sx={{ display: 'inline' }}
+                                              component="span"
+                                              variant="body2"
+                                              color="text.primary"
+                                            >
+                                              {eventData.name}
+                                              <br></br>
+                                            </Typography>
+                                            {eventData.eventName}
+                                          </React.Fragment>
+                                        }
+                                      />
+                                    </ListItem>
+                                  </List>
+                                   :
                                     <div key={index}>
                                         {Math.abs(activeStep - index) <= 2 ? (
                                             <Card sx={{ backgroundColor: "#e8eaf6", textAlign: "center" }}>
@@ -44,8 +76,9 @@ const Slider = ({ data }) => {
                                                     <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>סוג אירוע: {eventData.eventName}</Typography>
                                                     <Typography sx={{ mb: 1.5 }} color="text.secondary"> תאריך: {eventData.date}</Typography>
                                                     <Typography variant="body1">שם החוגג: {eventData.name}</Typography>
-                                                    <Typography variant="body1">מספר מוזמנים: {eventData.gusets}</Typography>
-                                                    <Typography variant="body1">כמות אישורים: {eventData.approval}</Typography>
+                                                    <Typography variant="body1">אולם אירועים: {ulamType.name}</Typography>
+                                                    <Typography variant="body1">קייטרינג: {foodType.name}</Typography>
+                                                    <Typography variant="body1">צלם: {photographerType.name}</Typography>
                                                 </CardContent>
                                                 <CardActions sx={{ justifyContent: 'center' }}>
                                                     <Button size="small">מחיקה</Button>
@@ -54,6 +87,8 @@ const Slider = ({ data }) => {
                                             </Card>
                                         ) : null}
                                     </div>
+                            }
+                                    </>
                                 )
                             })}
                         </SwipeableViews>

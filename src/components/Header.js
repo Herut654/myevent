@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { AppBar, Box, Toolbar, Typography, Button } from '@mui/material';
 import { logout, reset } from '../features/auth/authSlice'
-import Logo from '../assets/images/logo.jpg'
+import Logo from '../assets/images/logo.png'
 
 function Header({handleOpen}) {
   const navigate = useNavigate()
