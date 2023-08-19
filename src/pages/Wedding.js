@@ -1,26 +1,28 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import EventCard from '../components/EventCard'
 import { Grid, Container, Typography } from '@mui/material'
 import useStyles from "./style";
-import eventHall from '../assets/images/eventHall.jpg'
-import catering from '../assets/images/catering.jpg'
-import attractionAndDJ from '../assets/images/attractionAndDJ.jpg'
-import weddingClouth from '../assets/images/weddingClouth.jpg'
-import photographer from '../assets/images/photographer.jpg'
-import beautySalon from '../assets/images/beautySalon.jpg'
 import PopUp from '../components/PopUp';
+import { getSuppliers } from '../features/supplier/supplierSlice'
+import { useSelector, useDispatch  } from 'react-redux'
 
 
 const Wedding = ({open, handleClose}) => {
     const classes = useStyles();
-    const data = [
-        { id: "1", name: "אולם אירועים", link: "ulamType", image: eventHall, description: "התקשרו אלינו כדי למצוא את אולם האירועים המתאים ביותר לאירוע שלכם" },
-        { id: "2", name: "קייטרינג", link: "foodType", image: catering, description: "התקשרו אלינו כדי למצוא את הקייטרינג הטוב ביותר לאירוע שלכם"  },
-        { id: "3", name: "אטרקציות ודיג'יי", link: "attractionType", image: attractionAndDJ, description: "Call us to find the best attraction and DJ for your event"  },
-        { id: "4", name: "לבוש לאירוע", link: "clouthType", image: weddingClouth, description: "התקשרו אלינו כדי למצוא את האאוטפיט הטוב ביותר לאירוע שלכם"  },
-        { id: "5", name: "צלם", link: "photographerType", image: photographer, description: "התקשרו אלינו כדי למצוא את הצלם הטוב ביותר לאירוע שלכם"  },
-        { id: "6", name: "סלון יופי", link: "salonType", image: beautySalon, description: "התקשרו אלינו כדי למצוא את סלון היופי הטוב ביותר לאירוע שלכם"  },
-    ]
+    const dispatch = useDispatch()
+    const { suppliers, isError, message } = useSelector(
+      (state) => state.suppliers
+    )
+  
+    useEffect(() => {
+  
+      if (isError) {
+        console.log(message)
+      }
+      dispatch(getSuppliers())
+  
+    }, [isError, message, dispatch])
+ 
     return (
         <Container className={classes.container}>
             <Grid container className={classes.gridContainer}>
@@ -29,7 +31,7 @@ const Wedding = ({open, handleClose}) => {
                 </Grid>
             </Grid>
             <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} className={classes.gridContainer}>
-                <EventCard data={data} />
+                <EventCard data={suppliers} />
             </Grid>
             <PopUp open={open} handleClose={handleClose} eventName="חתונה"/>
         </Container>

@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Autocomplete from '@mui/material/Autocomplete';
 import { Modal, Button, Paper, TextField, Typography, Stack } from '@mui/material'
 import useClasses from '../hooks/useClasses';
 import style from "./style";
+import { getLists } from '../features/list/listSlice'
+import { useSelector, useDispatch  } from 'react-redux'
 import { ulamType, foodType, salonType, attractionType, clouthType, photographerType, placeDesignType, mohelType, activeBarType} from "./Data";
 
 const PopUp = ({open, handleClose, eventName}) => {
@@ -11,6 +13,23 @@ const PopUp = ({open, handleClose, eventName}) => {
     const barMitzva = window.location.toString().includes("barMitzva")
     const birthday = window.location.toString().includes("birthday")
     const circumcision = window.location.toString().includes("circumcision")
+
+    const dispatch = useDispatch()
+    const { lists, isError, message } = useSelector(
+      (state) => state.lists
+    )
+  
+    useEffect(() => {
+  
+      if (isError) {
+        console.log(message)
+      }
+      dispatch(getLists())
+  
+    }, [isError, message, dispatch])
+
+    console.log("lists", lists)
+
   return (
     <Modal open={open} onClose={handleClose} >
     <Paper className={classes.modal} >

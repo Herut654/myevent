@@ -2,13 +2,8 @@ import React, { useEffect } from 'react';
 import useStyles from "./style";
 import EventCard from '../components/EventCard'
 import { Grid, Container, Typography } from '@mui/material'
-import Wedding from '../assets/images/Wedding.jpg'
-import BarMitzva from '../assets/images/BarMitzva.jpg'
-import Birthday from '../assets/images/Birthday.jpg'
-import Circumcision from '../assets/images/Circumcision.jpg'
 import { getEventsTypes } from '../features/eventsType/eventsTypeSlice'
 import { useSelector, useDispatch  } from 'react-redux'
-
 
 const Welcome = () => {
   const classes = useStyles();
