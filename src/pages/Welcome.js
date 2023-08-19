@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import useStyles from "./style";
 import EventCard from '../components/EventCard'
 import { Grid, Container, Typography } from '@mui/material'
@@ -6,18 +6,26 @@ import Wedding from '../assets/images/Wedding.jpg'
 import BarMitzva from '../assets/images/BarMitzva.jpg'
 import Birthday from '../assets/images/Birthday.jpg'
 import Circumcision from '../assets/images/Circumcision.jpg'
-import PopUp from '../components/PopUp';
+import { getEventsTypes } from '../features/eventsType/eventsTypeSlice'
+import { useSelector, useDispatch  } from 'react-redux'
 
 
 const Welcome = () => {
   const classes = useStyles();
-  const data = [
-    { id: "1", name: "חתונה", image: Wedding, description: "hello", link: "wedding" },
-    { id: "2", name: "בר מצווה", image: BarMitzva, description: "hello", link: "barMitzva" },
-    { id: "3", name: "יום הולדת", image: Birthday, description: "hello", link: "birthday" },
-    { id: "4", name: "ברית", image: Circumcision, description: "hello", link: "circumcision" },
-  ]
- 
+  const dispatch = useDispatch()
+  const { eventsTypes, isError, message } = useSelector(
+    (state) => state.eventsTypes
+  )
+
+  useEffect(() => {
+
+    if (isError) {
+      console.log(message)
+    }
+    dispatch(getEventsTypes())
+
+  }, [isError, message, dispatch])
+
 
   return (
     <Container className={classes.container}>
@@ -29,7 +37,7 @@ const Welcome = () => {
         </Grid>
       </Grid>
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} className={classes.gridContainer}>
-        <EventCard data={data} />
+        <EventCard data={eventsTypes} />
       </Grid>
       
     </Container>
